@@ -1,0 +1,24 @@
+import pandas as pd
+from googletrans import Translator
+data=pd.read_Csv("hindi.csv")
+print(data)
+
+
+translator=Translate()
+translations={}
+
+for column in data.col:
+    unique=data[column].unique()
+    for element in unique:
+        translations[element]=translator.translate(element).text
+for i in translations.items():
+    print(i)
+    data.replace(translations, inplace=True)
+    print(data)    
+
+
+
+
+
+
+
